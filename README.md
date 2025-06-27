@@ -1,1 +1,3 @@
 # Benederm-Skincare-Org-nico
+Benederm es una marca de skincare orgánico dedicada al cuidado consciente de la piel. Nuestro sitio ofrece una experiencia fresca y natural donde encontrarás productos elaborados con ingredientes botánicos certificados, libres de químicos dañinos y diseñados para nutrir tu piel de forma suave y efectiva. Desde cremas hidratantes hasta tónicos veganos, cada fórmula está pensada para brindarte bienestar, belleza y equilibrio, con respeto por la naturaleza.
+Descubre rutinas naturales, consejos de cuidado facial y soluciones personalizadas para una piel saludable y radiante, todo en un solo lugar.
