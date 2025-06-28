@@ -1,118 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benederm | Skincare Orgánico</title>
+
+  <!-- Google Font: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f3f7f3;
-      color: #2f4f4f;
+    :root {
+      --verde-claro: #a6d6a6;
+      --verde-oscuro: #2f5e43;
+      --gris-suave: #f5f9f6;
+      --blanco: #ffffff;
     }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--verde-oscuro);
+      background: var(--gris-suave);
+      line-height: 1.6;
+    }
+
+    /* ---------- HERO ---------- */
     header {
-      background-image: url('https://images.unsplash.com/photo-1543965170-4c92d58f5a4d');
-      background-size: cover;
-      background-position: center;
+      background: url("https://images.unsplash.com/photo-1556228724-4b3b93eb1354?auto=format&fit=crop&w=1200&q=80")
+                  center/cover no-repeat;
+      padding: 140px 20px;
       text-align: center;
-      color: white;
-      padding: 100px 20px;
+      position: relative;
+    }
+
+    header::after { /* Sutil degradado para legibilidad */
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      color: var(--blanco);
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 3em;
-      margin: 0;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.2rem;
+      margin-top: 8px;
+      opacity: 0.9;
     }
 
+    /* ---------- SECTIONS ---------- */
     .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
-
     .section h2 {
-      color: #3c6e47;
-    }
-
-    .section ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .section li {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-    }
-
-    .cta {
+      font-size: 2rem;
+      margin-bottom: 15px;
       text-align: center;
-      margin-top: 40px;
+      color: var(--verde-oscuro);
     }
 
-    .cta button {
-      background-color: #6dbb6d;
-      color: white;
+    /* ---------- BENEFITS LIST ---------- */
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .benefit-item {
+      background: var(--blanco);
+      border-radius: 14px;
+      padding: 25px;
+      flex: 1 1 220px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+    .benefit-item span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- PRODUCT CARDS ---------- */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .product-card {
+      background: var(--blanco);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+    }
+    .product-thumb img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+    .product-info h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .product-info p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* ---------- CTA BUTTON ---------- */
+    .btn-primary {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
       border: none;
-      padding: 15px 30px;
-      font-size: 1em;
+      padding: 14px 38px;
+      font-size: 1rem;
       border-radius: 30px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 30px;
+    }
+    .btn-primary:hover {
+      background: #13432c;
     }
 
-    .cta button:hover {
-      background-color: #5aa85a;
-    }
-
-    footer {
-      background-color: #e5f2e5;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #567d56;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Benederm</h1>
-    <p>Skincare orgánico inspirado en la pureza natural</p>
-  </header>
-
-  <section class="section">
-    <h2>Cuidado consciente para tu piel</h2>
-    <p>
-      En Benederm unimos la ciencia de la piel con el poder de la naturaleza. Nuestros productos orgánicos están formulados para nutrir, hidratar y proteger tu piel de forma responsable y efectiva.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>¿Por qué elegir Benederm?</h2>
-    <ul>
-      <li>🌿 Ingredientes 100% orgánicos y certificados</li>
-      <li>🍃 Cero químicos agresivos, solo bondad vegetal</li>
-      <li>💧 Texturas suaves, aromas naturales, resultados visibles</li>
-      <li>🌎 Sustentable, vegano y libre de crueldad</li>
-    </ul>
-  </section>
-
-  <div class="cta">
-    <h2>Empieza tu rutina natural hoy</h2>
-    <button onclick="location.href='#'">Explorar productos</button>
-  </div>
-
-  <footer>
-    © 2025 Benederm – Belleza consciente. Todos los derechos reservados.
-  </footer>
-
-</body>
-</html>
+    /* ---------- TESTIMONIAL ---------- */
+    .testimonial {
+      backgro
